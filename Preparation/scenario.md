@@ -4,6 +4,13 @@
 
 Aplikace pro vyhledávání možností pro výjezd v zahraničí. Aplikace bude obsahovat vyhledávač a možnost vložit nový výjezd.
 
+Bude obsahovat:
+- úvodní stránku
+- formulář na vyhledávání - filtr semestru, zemí
+- formulář na vložení výjezdu
+- seznam výsledků vyhledávání
+- detail výsledku vyhledání
+
 ## 2. Otázky na které se chcete zeptat
 
 ## 3. Technologie, které chcete použít

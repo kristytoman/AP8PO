@@ -17,8 +17,11 @@
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
+        "nunomaduro/larastan": "^2.1",
+        "php-parallel-lint/php-parallel-lint": "^1.3",
         "phpunit/phpunit": "^9.5.10",
-        "spatie/laravel-ignition": "^1.0"
+        "spatie/laravel-ignition": "^1.0",
+        "squizlabs/php_codesniffer": "^3.6"
     },
     "autoload": {
         "psr-4": {
@@ -45,6 +48,11 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "static-analysis": [
+            "parallel-lint app tests",
+            "phpcs --standard=PSR12 app tests",
+            "phpstan analyse"
         ]
     },
     "extra": {

@@ -13,9 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('home_courses', function (Blueprint $table) {
+        Schema::create('cancellations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('reason_cz', 248);
+            $table->string('reason_en', 248);
+            $table->boolean('is_verified')
+                ->default(false);
         });
     }
 
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('home_courses');
+        Schema::dropIfExists('cancelations');
     }
 };

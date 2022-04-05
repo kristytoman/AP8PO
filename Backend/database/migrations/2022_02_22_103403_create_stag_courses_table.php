@@ -13,8 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('stag_courses', function (Blueprint $table) {
+        Schema::create('stag_course_stag_field', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 128)
+                ->nullable()
+                ->default(null);
+            $table->string('name_en', 128)
+                ->nullable()
+                ->default(null);
             $table->timestamps();
         });
     }

@@ -14,8 +14,19 @@ return new class extends Migration
     public function up()
     {
         Schema::create('pairings', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->foreignId('mobility_id')
+                ->constrained('mobilities');
+            $table->foreignId('foreign_course_id')
+                ->constrained('foreign_courses');
+            $table->foreignId('home_course_id')
+                ->constrained('home_courses');
+            $table->tinyInteger('rating')
+                ->nullable()
+                ->default(null);
+            $table->foreignId('cancellation_id')
+                ->nullable()
+                ->default(null)
+                ->constrained('cancellations');
         });
     }
 

@@ -13,8 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cancelations', function (Blueprint $table) {
+        Schema::create('home_courses', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('stag_field_id');
+            $table->foreignId('stag_course_id');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cancelations');
+        Schema::dropIfExists('home_courses');
     }
 };

@@ -15,6 +15,16 @@ return new class extends Migration
     {
         Schema::create('stag_fields', function (Blueprint $table) {
             $table->id();
+            $table->string('title', 128);
+            $table->string('title_en', 128);
+            $table->string('faculty', 3);
+            $table->string('language', 2)
+                ->nullable()
+                ->default('cs');
+            $table->string('degree', 10)
+                ->nullable()
+                ->default(null);
+            $table->boolean('is_full_time')->default(true);
             $table->timestamps();
         });
     }

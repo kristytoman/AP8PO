@@ -19,6 +19,7 @@ import HelloWorld from "@/components/HelloWorld.vue";
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/mobility/create">Create mobility</RouterLink>
       </nav>
     </div>
   </header>
@@ -27,7 +28,7 @@ import HelloWorld from "@/components/HelloWorld.vue";
 </template>
 
 <style>
-@import "@/assets/base.css";
+@import "./assets/base.css";
 
 #app {
   max-width: 1280px;
@@ -50,8 +51,7 @@ header {
 a,
 .green {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+  @apply text-emerald-500 !important;
 }
 
 @media (hover: hover) {
@@ -68,7 +68,7 @@ nav {
 }
 
 nav a.router-link-exact-active {
-  color: var(--color-text);
+  color: var(--color-text) !important;
 }
 
 nav a.router-link-exact-active:hover {
@@ -79,6 +79,7 @@ nav a {
   display: inline-block;
   padding: 0 1rem;
   border-left: 1px solid var(--color-border);
+  @apply text-emerald-500;
 }
 
 nav a:first-of-type {

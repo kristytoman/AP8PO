@@ -2,12 +2,7 @@
   <div>
     <div class="relative w-full mb-4">
       <label for="university">University:</label>
-      <input
-        type="text"
-        id="university"
-        :class="universityInputClass"
-        v-model="universityId"
-      />
+      <the-select-input :list="[]" />
       <span class="error-message">{{ universityIdError }}</span>
     </div>
 
@@ -58,9 +53,11 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import ApiMobility from "@/services/ApiMobility";
+import TheSelectInput from "@/components/TheSelectInput.vue";
 
 export default defineComponent({
   name: "TheMobilityCreateForm",
+  components: { TheSelectInput },
   data() {
     return {
       universityId: "",
